@@ -1,0 +1,96 @@
+body{
+    width: 960px;
+    margin:0 auto;
+    font-size: 24px;
+}
+
+header{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+header h1{
+    font-size: 36px;
+}
+
+main{
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+
+.game_field{
+    background: url(../img/soccer_goal.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+}
+
+#reno{
+    width: 140px;
+    position: relative;
+    top: 220px;
+}
+
+#ball{
+    width: 100px;
+    position: relative;
+    top: 220px;
+}
+
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+
+.shoot_text{
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+    margin-top: 24px;
+}
+
+.player_shoot{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 0;
+	margin: 0 auto 0 auto;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+	color: black;
+	background-color: #fa9d78;
+	font-size: 21px;
+	width: 300px;
+	height: 60px;
+	margin: 24px auto 32px auto;
+    border-color: black;
+	border-radius: 4px;
+	transition: 0.2s;
+    cursor:  pointer;
+}
+
+.btn:hover{
+	background-color: orange;
+}
+
+.result_box{
+    display: block;
+    width:  300px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   	margin: 32px auto 32px auto;
+    border: 1px solid black;
+    background-color: #fff;
+    position: relative;
+    top: 100px;
+} 
+

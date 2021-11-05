@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/sample.css">
+  <title>サッカー</title>
+</head>
+
+<body>
+  <header>
+    <h1>レノ丸PKゲーム</h1>
+  </header>
+
+  <main>
+    <div class="game_field">
+      <div class="result_box" id="result">結果</div>
+      <div>
+        <img id="reno" src="img/renomaru.png" alt="">
+      </div>
+      <div>
+        <img id="ball" src="img/soccer_ball.png" alt="">
+      </div>
+    </div>
+    <div class="shoot_text">シュート方向を選んでね！</div>
+    <ul class="player_shoot">
+      <li class="btn" id="player_shoot1" onClick="count1()">左</li>
+      <li class=" btn" id="player_shoot2" onClick="count1()">正面</li>
+      <li class="btn" id="player_shoot3" onClick="count1()">右</li>
+    </ul>
+
+    <p>シュート回数：<span id="count">0</span></p>
+    <p>成功回数：<span id="point">0</span></p>
+
+  </main>
+
+  <footer>Soccer Game 2021</footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    //ここに処理を追加
+
+    const win = "Goal!!!!"
+    const lose = "No Goal"
+
+    $("#player_shoot1").on("click", function () {
+
+      const min = 0;
+      const max = 2;
+      const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
+
+      $('#ball').animate({ 'top': '100px', 'left': '-300px' }, 500);
+      $('#ball').delay(1000).animate({ 'top': '220px', 'left': '0px' });
+
+      if (randomNumber === 0) {
+
+        $('#reno').animate({ 'top': '220px', 'left': '-280px' }, 500);
+        $("#result").text(lose);
+        $("#result").css("color", "blue");
+        $('#reno').delay(1000).animate({ 'top': '220px', 'left': '0px' });
+
+      } else if (randomNumber === 1) {
+
+        $('#reno').animate({ 'top': '180px' }, 500);
+        $("#result").text(win);
+        $("#result").css("color", "red");
+        $('#reno').delay(1000).animate({ 'top': '220px', 'left': '0px' });
+
+      } else if (randomNumber === 2) {
+
+        $('#reno').animate({ 'top': '220px', 'left': '280px' }, 500);
+        $("#result").text(win);
+        $("#result").css("color", "red");
+        $('#reno').delay(1000).animate({ 'top': '220px', 'left': '0px' });
+
+      }
+
+      //let count2 = function count2() {
+      //  (randomNumber === 1, randomNumber === 2);
+      //}
+      //
+      //console.count(count2);
+
+    })
+
+    $("#player_shoot2").on("click", function () {
+
+      const min = 0;
+      const max = 2;
+      const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
+
+      $('#ball').animate({ 'top': '100px' }, 500);
+      $('#ball').delay(1000).animate({ 'top': '220px', 'left': '0px' });
+
+      if (randomNumber === 0) {
+
+        $('#reno').animate({ 'top': '220px', 'left': '-280px' }, 500);
+        $("#result").text(win);
+        $("#result").css("color", "red");
+        $('#reno').delay(1000).animate({ 'top': '220px', 'left': '0px' });
+
+      } else if (randomNumber === 1) {
+
+        $('#reno').animate({ 'top': '180px' }, 500);
+        $("#result").text(lose);
+        $("#result").css("color", "blue");
+        $('#reno').delay(1000).animate({ 'top': '220px', 'left': '0px' });
+
+      } else if (randomNumber === 2) {
+
+        $('#reno').animate({ 'top': '220px', 'left': '280px' }, 500);
+        $("#result").text(win);
+        $("#result").css("color", "red");
+        $('#reno').delay(1000).animate({ 'top': '220px', 'left': '0px' });
+
+      }
+
+      //let count2 = count(randomNumber === 0, randomNumber === 2);
+
+    })
+
+    $("#player_shoot3").on("click", function () {
+
+      const min = 0;
+      const max = 2;
+      const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
+
+      $('#ball').animate({ 'top': '100px', 'left': '300px' }, 500);
+      $('#ball').delay(1000).animate({ 'top': '220px', 'left': '0px' });
+
+      if (randomNumber === 0) {
+
+        $('#reno').animate({ 'top': '220px', 'left': '-280px' }, 500);
+        $("#result").text(win);
+        $("#result").css("color", "red");
+        $('#reno').delay(1000).animate({ 'top': '220px', 'left': '0px' });
+
+      } else if (randomNumber === 1) {
+
+        $('#reno').animate({ 'top': '180px' }, 500);
+        $("#result").text(win);
+        $("#result").css("color", "red");
+        $('#reno').delay(1000).animate({ 'top': '220px', 'left': '0px' });
+
+      } else if (randomNumber === 2) {
+
+        $('#reno').animate({ 'top': '220px', 'left': '280px' }, 500);
+        $("#result").text(lose);
+        $("#result").css("color", "blue");
+        $('#reno').delay(1000).animate({ 'top': '220px', 'left': '0px' });
+
+      }
+
+      //let count3 = count(randomNumber === 0, randomNumber === 1);
+
+    })
+
+    function count1() {
+      let thisCount = $("#count").html();
+      thisCount = Number(thisCount);
+      thisCount = thisCount + 1;
+      $("#count").html(thisCount);
+
+      if (thisCount % 2 !== 0) {
+        console.log("奇数");
+
+      } else {
+        console.log("偶数");
+      }
+    }
+
+
+    //function count2(win) {
+    //  let thisCount2 = $("#point").html();
+    //  thisCount2 = Number(thisCount2);
+    //  $("#point").html(thisCount2);
+    //
+    //}
+
+
+
+    //$(function () {
+    //  $('#player_shoot3')
+    //    .click(function () {
+    //      if ($('#reno').hasClass('add') == false) {
+    //        $('#reno').attr('src', 'img/player.png').addClass('add');
+    //      } else {
+    //        $('#reno').attr('src', 'img/renomaru.png').removeClass('add');
+    //      }
+    //    });
+    //});
+
+
+  </script>
+
+</body>
+
+</html>
