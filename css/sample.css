@@ -80,6 +80,27 @@ footer{
 	background-color: orange;
 }
 
+.change_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+	color: black;
+	background-color: lightgray;
+	font-size: 21px;
+	width: 300px;
+	height: 60px;
+	margin: 24px auto 32px auto;
+    border-color: black;
+	border-radius: 4px;
+	transition: 0.2s;
+    cursor:  pointer;
+}
+
+.change_btn:hover{
+	background-color: grey;
+}
+
 .result_box{
     display: block;
     width:  300px;
